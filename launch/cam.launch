@@ -1,0 +1,6 @@
+<launch>	
+	<env name="ROSCONSOLE_CONFIG_FILE" 
+       value="$(find mini_rover)/config/custom_rosconsole.conf"/>
+    <rosparam param="rover_params" command="load" file="$(find mini_rover)/config/rover_config.yaml" />
+	<node name="rover_cam" pkg="mini_rover" type="img_process_node.py" output="screen" />
+</launch>

@@ -1,0 +1,13 @@
+<launch>	
+	<env name="ROSCONSOLE_CONFIG_FILE" 
+       value="$(find mini_rover)/config/custom_rosconsole.conf"/>
+    <rosparam param="rover_params" command="load" file="$(find mini_rover)/config/rover_config.yaml" />
+
+    <!-- start the rosbag playback -->
+    <arg name="playback" default="true" />	
+  	<arg name="start_time" default="-s 250" />
+  	<arg name="bagfile" default="/home/yetan/Projects/mini_rover/field_test/2018-04-09/2018-04-09-16-53-23_image_raw.bag" />
+  	<node pkg="rosbag" type="play" name="player" args="$(arg start_time) $(arg bagfile)" if="$(arg playback)"/>
+	
+	<node name="rover_cam" pkg="mini_rover" type="img_process_node_pespective.py" output="screen" />
+</launch>

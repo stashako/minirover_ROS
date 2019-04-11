@@ -1,0 +1,6 @@
+<launch>
+        <param name="robot_description" command="cat $(find mini_rover)/model/mini_rover.urdf" />
+        <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+        <node name="baselink_to_tf" pkg="mini_rover" type="baselink_to_tf" output="screen"/>
+        <node type="rviz" name="rviz" pkg="rviz" args="-d $(find mini_rover)/model/mini_rover.rviz" />
+</launch>

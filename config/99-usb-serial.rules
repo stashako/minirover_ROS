@@ -1,0 +1,7 @@
+SUBSYSTEM=="tty", ATTRS{idVendor}=="239a", ATTRS{idProduct}=="800b", ATTRS{serial}=="xhci-hcd.2.auto", SYMLINK+="adafruit_usb"
+SUBSYSTEM=="tty", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", ATTRS{serial}=="A906HARP", SYMLINK+="adafruit_serial_rover"
+SUBSYSTEM=="tty", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", ATTRS{serial}=="AH03LMTG", SYMLINK+="adafruit_serial_cbl"
+KERNEL=="js", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c21d", ATTRS{serial}=="E9C2A4D8", SYMLINK+="gamepad"
+SUBSYSTEM=="video4linux", ATTRS{idVendor}=="2997", ATTRS{idProduct}=="0009", ATTRS{serial}=="004C1A1E", SYMLINK+="rovercam_f"
+SUBSYSTEM=="video4linux", ATTRS{idVendor}=="2997", ATTRS{idProduct}=="0009", ATTRS{serial}=="004C2606", SYMLINK+="rovercam_b"
+

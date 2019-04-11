@@ -1,0 +1,13 @@
+<launch>
+	<env name="ROSCONSOLE_CONFIG_FILE" 
+       value="$(find mini_rover)/config/custom_rosconsole.conf"/>
+
+	<rosparam param="rover_params" command="load" file="$(find mini_rover)/config/rover_config.yaml" /> 
+	<node name="rover_ctrl_node" pkg="mini_rover" type="rover_driver" output="screen"/>
+
+	<rosparam param="joy_node/dev">"/dev/input/js0"</rosparam>
+	<rosparam param="joy_node/autorepeat_rate">20</rosparam>
+	<node name="joy_node" pkg="joy" type="joy_node" />
+
+	<!-- node name="rover_cam" pkg="mini_rover" type="img_press_node.py" / -->
+</launch>
